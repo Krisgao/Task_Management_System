@@ -8,11 +8,15 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Task_Management_System.Models;
+using System.Web.Http.Cors;
 
 namespace Task_Management_System.Controllers
 {
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class QuoteController : ApiController
     {
+        
+        
         [Route("api/Quote/GetAll")]
         public IEnumerable<Quote> Get()
         {
