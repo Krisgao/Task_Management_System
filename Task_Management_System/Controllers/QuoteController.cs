@@ -12,7 +12,7 @@ using System.Web.Http.Cors;
 
 namespace Task_Management_System.Controllers
 {
-    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
+    //[EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class QuoteController : ApiController
     {
         

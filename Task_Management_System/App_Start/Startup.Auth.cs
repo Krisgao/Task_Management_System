@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Task_Management_System.Providers;
 using Task_Management_System.Models;
+using Microsoft.Owin.Cors;
 
 namespace Task_Management_System
 {
@@ -22,6 +23,7 @@ namespace Task_Management_System
         // For more information on configuring authentication, please visit https://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
+            app.UseCors(CorsOptions.AllowAll);
             // Configure the db context and user manager to use a single instance per request
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
